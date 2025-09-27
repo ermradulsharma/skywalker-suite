@@ -1,66 +1,5 @@
 @extends('layouts.web.web')
-
 @section('content')
-
-
-<!-- Navbar & Carousel Start -->
-<div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-        <a href="{{route('/')}}" class="navbar-brand p-0">
-            <h1 class="m-0">
-                <!-- <img src="{{asset('web')}}/img/logo.jpg" alt=""> -->
-                Zaibainfotech
-
-            </h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="{{route('/')}}" class="nav-item nav-link active">Home</a>
-                <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-                <!-- <a href="service.html" class="nav-item nav-link"></a> -->
-                <a href="{{url('service')}}" class="nav-item nav-link">Services</a>
-
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="" class="dropdown-item">Blog Grid</a>
-                        <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div> -->
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Portfolio</a>
-                    <!-- <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="feature.html" class="dropdown-item">Our features</a>
-                        <a href="team.html" class="dropdown-item">Team Members</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="quote.html" class="dropdown-item">Free Quote</a>
-                    </div> -->
-                </div>
-                <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
-            </div>
-
-        </div>
-    </nav>
-
-
-    <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-        <div class="row py-5">
-            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                <h1 class="display-4 text-white animated zoomIn">Services</h1>
-                <a href="" class="h5 text-white">Home</a>
-                <i class="far fa-circle text-white px-2"></i>
-                <a href="" class="h5 text-white">Services</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Navbar & Carousel End -->
-
-
 <!-- Full Screen Search Start -->
 <div class="modal fade" id="searchModal" tabindex="-1">
     <div class="modal-dialog modal-fullscreen">
@@ -78,7 +17,6 @@
     </div>
 </div>
 <!-- Full Screen Search End -->
-
 
 <!-- Service Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -160,7 +98,6 @@
 </div>
 <!-- Service End -->
 
-
 <!-- Testimonial Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
@@ -171,7 +108,7 @@
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
             <div class="testimonial-item bg-light my-4">
                 <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;">
+                    <img class="img-fluid rounded" src="{{ asset('web/img/testimonial-1.jpg') }}" style="width: 60px; height: 60px;">
                     <div class="ps-4">
                         <h4 class="text-primary mb-1">Client Name</h4>
                         <small class="text-uppercase">Profession</small>
@@ -183,7 +120,7 @@
             </div>
             <div class="testimonial-item bg-light my-4">
                 <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
+                    <img class="img-fluid rounded" src="{{ asset('web/img/testimonial-2.jpg') }}" style="width: 60px; height: 60px;">
                     <div class="ps-4">
                         <h4 class="text-primary mb-1">Client Name</h4>
                         <small class="text-uppercase">Profession</small>
@@ -195,7 +132,7 @@
             </div>
             <div class="testimonial-item bg-light my-4">
                 <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+                    <img class="img-fluid rounded" src="{{ asset('web/img/testimonial-3.jpg') }}" style="width: 60px; height: 60px;">
                     <div class="ps-4">
                         <h4 class="text-primary mb-1">Client Name</h4>
                         <small class="text-uppercase">Profession</small>
@@ -207,7 +144,7 @@
             </div>
             <div class="testimonial-item bg-light my-4">
                 <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                    <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;">
+                    <img class="img-fluid rounded" src="{{ asset('web/img/testimonial-4.jpg') }}" style="width: 60px; height: 60px;">
                     <div class="ps-4">
                         <h4 class="text-primary mb-1">Client Name</h4>
                         <small class="text-uppercase">Profession</small>
@@ -222,24 +159,22 @@
 </div>
 <!-- Testimonial End -->
 
-
 <!-- Vendor Start -->
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5 mb-5">
-        <div class="bg-white">
-            <div class="owl-carousel vendor-carousel">
-                <img src="img/vendor-1.jpg" alt="">
-                <img src="img/vendor-2.jpg" alt="">
-                <img src="img/vendor-3.jpg" alt="">
-                <img src="img/vendor-4.jpg" alt="">
-                <img src="img/vendor-5.jpg" alt="">
-                <img src="img/vendor-6.jpg" alt="">
-                <img src="img/vendor-7.jpg" alt="">
-                <img src="img/vendor-8.jpg" alt="">
-                <img src="img/vendor-9.jpg" alt="">
-            </div>
+    <div class="container py-5">
+        <div class="owl-carousel vendor-carousel bg-white p-4 rounded shadow-sm">
+            <img src="{{ asset('web/img/vendor-1.jpg') }}" alt="Vendor 1 - Partner Company">
+            <img src="{{ asset('web/img/vendor-2.jpg') }}" alt="Vendor 2 - Partner Company">
+            <img src="{{ asset('web/img/vendor-3.jpg') }}" alt="Vendor 3 - Partner Company">
+            <img src="{{ asset('web/img/vendor-4.jpg') }}" alt="Vendor 4 - Partner Company">
+            <img src="{{ asset('web/img/vendor-5.jpg') }}" alt="Vendor 5 - Partner Company">
+            <img src="{{ asset('web/img/vendor-6.jpg') }}" alt="Vendor 6 - Partner Company">
+            <img src="{{ asset('web/img/vendor-7.jpg') }}" alt="Vendor 7 - Partner Company">
+            <img src="{{ asset('web/img/vendor-8.jpg') }}" alt="Vendor 8 - Partner Company">
+            <img src="{{ asset('web/img/vendor-9.jpg') }}" alt="Vendor 9 - Partner Company">
         </div>
     </div>
 </div>
 <!-- Vendor End -->
+
 @endsection

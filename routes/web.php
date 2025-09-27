@@ -2,32 +2,36 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-Use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| Here is where you can register web routes for your application.
 |
 */
 
+// Homepage
 Route::get('/', function () {
     return view('web.welcome');
-})->name('/');
+})->name('home');
 
+// Laravel Auth routes
 Auth::routes();
 
-Route::get('about', [FrontendController::class, 'about'])->name('about');
-Route::get('service', [FrontendController::class, 'service'])->name('service');
-Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
+// Static pages
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/services', [FrontendController::class, 'service'])->name('services');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 
+// Dashboard (for authenticated users)
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::resource('services',ServiceController::class);
-Route::resource('project',ProjectController::class);
+// Resource routes
+Route::resource('admin/services', ServiceController::class);
+Route::resource('admin/projects', ProjectController::class);
