@@ -35,3 +35,11 @@
 
 ```bash
 git clone https://github.com/ermradulsharma/skywalker-suite.git
+cd skywalker-suite
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+npm install
+npm run dev
